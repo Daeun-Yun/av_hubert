@@ -1,0 +1,26 @@
+[2026-06-17 16:46:34,528][avhubert.viseme_hubert_pretraining][INFO] - current directory is /workspace/code/av_hubert/avhubert/outputs/2026-06-17/16-46-31
+[2026-06-17 16:46:34,529][avhubert.viseme_hubert_pretraining][INFO] - AVHubertPretrainingTask Config {'_name': 'viseme_av_hubert_pretraining', 'data': '/data/ssd1/papadoar/datasets/LRS3/433h_data/', 'viseme_classification': True, 'viseme_dir': '/data/ssd1/papadoar/datasets/LRS3/433h_data', 'use_ctc': True, 'labels': ['wrd'], 'label_dir': '/data/ssd1/papadoar/datasets/LRS3/433h_data/', 'label_rate': -1, 'sample_rate': 16000, 'normalize': True, 'enable_padding': False, 'max_sample_size': 500, 'min_sample_size': None, 'max_trim_sample_size': '${task.max_sample_size}', 'single_target': True, 'random_crop': False, 'pad_audio': True, 'pdb': False, 'stack_order_audio': 4, 'skip_verify': False, 'image_aug': True, 'image_crop_size': 88, 'image_mean': 0.421, 'image_std': 0.165, 'modalities': ['video', 'audio'], 'is_s2s': True, 'tokenizer_bpe_name': 'sentencepiece', 'tokenizer_bpe_model': '/data/ssd1/papadoar/datasets/LRS3/spm1000/spm_unigram1000.model', 'noise_wav': '/data/ssd1/papadoar/datasets/musan/tsv/all/', 'noise_prob': 0.3, 'noise_snr': '-2.5', 'noise_num': 1, 'fine_tuning': True}
+/workspace/code/visg_avhubert/fairseq/fairseq/checkpoint_utils.py:304: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load(f, map_location=torch.device("cpu"))
+Traceback (most recent call last):
+  File "/workspace/code/visg_avhubert/avhubert/infer_s2s.py", line 287, in hydra_main
+    distributed_utils.call_main(cfg, main)
+  File "/workspace/code/visg_avhubert/fairseq/fairseq/distributed/utils.py", line 369, in call_main
+    main(cfg, **kwargs)
+  File "/workspace/code/visg_avhubert/avhubert/infer_s2s.py", line 91, in main
+    return _main(cfg, h)
+  File "/workspace/code/visg_avhubert/avhubert/infer_s2s.py", line 114, in _main
+    models, saved_cfg, task = checkpoint_utils.load_model_ensemble_and_task([cfg.common_eval.path], arg_overrides=arg_overrides)
+  File "/workspace/code/visg_avhubert/fairseq/fairseq/checkpoint_utils.py", line 446, in load_model_ensemble_and_task
+    model = task.build_model(cfg.model)
+  File "/workspace/code/visg_avhubert/fairseq/fairseq/tasks/fairseq_task.py", line 324, in build_model
+    model = models.build_model(cfg, self)
+  File "/workspace/code/visg_avhubert/fairseq/fairseq/models/__init__.py", line 96, in build_model
+    return model.build_model(cfg, task)
+  File "/workspace/code/visg_avhubert/avhubert/viseme_hubert_asr.py", line 498, in build_model
+    state = checkpoint_utils.load_checkpoint_to_cpu(
+  File "/workspace/code/visg_avhubert/fairseq/fairseq/checkpoint_utils.py", line 303, in load_checkpoint_to_cpu
+    with open(local_path, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/papadoar@ad.mee.tcd.ie/models/noise_pt_large_vox_iter5.pt'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

@@ -282,7 +282,8 @@ class AVHubertDataset(FairseqDataset):
             sample_rate, wav_data = wavfile.read(audio_fn)
             assert sample_rate == 16_000 and len(wav_data.shape) == 1
             if np.random.rand() < self.noise_prob:
-                wav_data = self.add_noise(wav_data)
+                video_id = audio_fn.split('/')[-2]
+                wav_data = self.add_noise(wav_data, exclude_id=video_id)
             audio_feats = logfbank(wav_data, samplerate=sample_rate).astype(np.float32) # [T, F]
             audio_feats = stacker(audio_feats, self.stack_order_audio) # [T/stack_order_audio, F*stack_order_audio]
         else:
@@ -301,11 +302,17 @@ class AVHubertDataset(FairseqDataset):
         feats = np.expand_dims(feats, axis=-1)
         return feats
 
-    def select_noise(self):
-        rand_indexes = np.random.randint(0, len(self.noise_wav), size=self.noise_num)
+    def select_noise(self, exclude_id=None):  # de: 자신의 발화는 제외한 발화 중에서 랜덤으로 선택하도록 했음
+        candidates = self.noise_wav
+        if exclude_id is not None:
+            prefix = exclude_id + '_'
+            filtered = [p for p in self.noise_wav if not os.path.basename(p).startswith(prefix)]
+            if filtered:
+                candidates = filtered
+        rand_indexes = np.random.randint(0, len(candidates), size=self.noise_num)
         noise_wav = []
         for x in rand_indexes:
-            noise_wav.append(wavfile.read(self.noise_wav[x])[1].astype(np.float32))
+            noise_wav.append(wavfile.read(candidates[x])[1].astype(np.float32))
         if self.noise_num == 1:
             return noise_wav[0]
         else:
@@ -314,9 +321,9 @@ class AVHubertDataset(FairseqDataset):
             noise_wav = np.floor(np.stack(noise_wav).mean(axis=0))
             return noise_wav
 
-    def add_noise(self, clean_wav):
+    def add_noise(self, clean_wav, exclude_id=None):
         clean_wav = clean_wav.astype(np.float32)
-        noise_wav = self.select_noise()
+        noise_wav = self.select_noise(exclude_id=exclude_id)
         if type(self.noise_snr) == int or type(self.noise_snr) == float:
             snr = self.noise_snr
         elif type(self.noise_snr) == tuple:

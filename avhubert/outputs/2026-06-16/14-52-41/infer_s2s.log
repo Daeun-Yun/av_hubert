@@ -1,0 +1,714 @@
+[2026-06-16 14:52:44,032][avhubert.hubert_pretraining][INFO] - current directory is /workspace/code/av_hubert/avhubert/outputs/2026-06-16/14-52-41
+[2026-06-16 14:52:44,032][avhubert.hubert_pretraining][INFO] - AVHubertPretrainingTask Config {'_name': 'av_hubert_pretraining', 'data': '/checkpoint/bshi/data/lrs3//video/wav/all_tsv/', 'labels': ['wrd'], 'label_dir': '/checkpoint/bshi/data/lrs3//exp/ls-hubert/tune-modality/all_bpe/unigram1000/', 'label_rate': -1, 'sample_rate': 16000, 'normalize': True, 'enable_padding': False, 'max_sample_size': 500, 'min_sample_size': None, 'max_trim_sample_size': '${task.max_sample_size}', 'single_target': True, 'random_crop': False, 'pad_audio': True, 'pdb': False, 'stack_order_audio': 4, 'skip_verify': False, 'image_aug': True, 'image_crop_size': 88, 'image_mean': 0.421, 'image_std': 0.165, 'modalities': ['audio', 'video'], 'is_s2s': True, 'tokenizer_bpe_name': 'sentencepiece', 'tokenizer_bpe_model': '/checkpoint/bshi/data/lrs3//lang/spm/spm_unigram1000.model', 'noise_wav': '/checkpoint/bshi/data/lrs3//audio/noise/tsv/musan-lgall/', 'noise_prob': 0.25, 'noise_snr': '0', 'noise_num': 1, 'fine_tuning': True}
+[2026-06-16 14:52:44,072][avhubert.hubert_pretraining][INFO] - current directory is /workspace/code/av_hubert/avhubert/outputs/2026-06-16/14-52-41
+[2026-06-16 14:52:44,073][avhubert.hubert_pretraining][INFO] - AVHubertPretrainingTask Config {'_name': 'av_hubert_pretraining', 'data': '/checkpoint/bshi/data/lrs3//video/wav/all_tsv/', 'labels': ['km'], 'label_dir': '/checkpoint/bshi/data/lrs3//video/hubert/stitch-iters/envox-iter4-l12c2000/', 'label_rate': 25, 'sample_rate': 25, 'normalize': True, 'enable_padding': False, 'max_sample_size': 2000, 'min_sample_size': 5, 'max_trim_sample_size': 400, 'single_target': False, 'random_crop': True, 'pad_audio': False, 'pdb': False, 'stack_order_audio': 4, 'skip_verify': False, 'image_aug': True, 'image_crop_size': 88, 'image_mean': 0.421, 'image_std': 0.165, 'modalities': ['audio', 'video'], 'is_s2s': False, 'tokenizer_bpe_name': None, 'tokenizer_bpe_model': None, 'noise_wav': '/checkpoint/bshi/data/lrs3//audio/noise/tsv/musan-lgall/', 'noise_prob': 0.25, 'noise_snr': '0', 'noise_num': 1, 'fine_tuning': False}
+[2026-06-16 14:52:44,079][avhubert.hubert][INFO] - HubertModel Config: {'_name': 'av_hubert', 'label_rate': 25, 'input_modality': '${task.input_modality}', 'extractor_mode': default, 'encoder_layers': 24, 'encoder_embed_dim': 1024, 'encoder_ffn_embed_dim': 4096, 'encoder_attention_heads': 16, 'activation_fn': gelu, 'dropout': 0.1, 'attention_dropout': 0.1, 'activation_dropout': 0.0, 'encoder_layerdrop': 0.05, 'dropout_input': 0.1, 'dropout_features': 0.1, 'final_dim': 256, 'untie_final_proj': True, 'layer_norm_first': True, 'conv_feature_layers': '[(512,10,5)] + [(512,3,2)] * 4 + [(512,2,2)] * 2', 'conv_bias': False, 'logit_temp': 0.1, 'target_glu': False, 'feature_grad_mult': 0.1, 'mask_length_audio': 10, 'mask_prob_audio': 0.8, 'mask_length_image': 5, 'mask_prob_image': 0.3, 'mask_selection': static, 'mask_other': 0.0, 'no_mask_overlap': False, 'mask_min_space': 1, 'mask_channel_length': 10, 'mask_channel_prob': 0.0, 'mask_channel_selection': static, 'mask_channel_other': 0.0, 'no_mask_channel_overlap': False, 'mask_channel_min_space': 1, 'conv_pos': 128, 'conv_pos_groups': 16, 'latent_temp': [2.0, 0.5, 0.999995], 'skip_masked': False, 'skip_nomask': False, 'resnet_relu_type': 'prelu', 'resnet_weights': None, 'sim_type': 'cosine', 'sub_encoder_layers': 0, 'audio_feat_dim': 104, 'modality_dropout': 0.5, 'audio_dropout': 0.5, 'modality_fuse': 'concat', 'selection_type': 'same_seq', 'masking_type': 'input', 'decoder_embed_dim': 768, 'decoder_ffn_embed_dim': 3072, 'decoder_layers': 6, 'decoder_layerdrop': 0.0, 'decoder_attention_heads': 4, 'decoder_learned_pos': False, 'decoder_normalize_before': False, 'no_token_positional_embeddings': False, 'decoder_dropout': 0.1, 'decoder_attention_dropout': 0.1, 'decoder_activation_dropout': 0.0, 'max_target_positions': 2048, 'share_decoder_input_output_embed': False, 'no_scale_embedding': True}
+[2026-06-16 14:52:50,955][avhubert.hubert_pretraining][INFO] - current directory is /workspace/code/av_hubert/avhubert/outputs/2026-06-16/14-52-41
+[2026-06-16 14:52:50,955][avhubert.hubert_pretraining][INFO] - AVHubertPretrainingTask Config {'_name': 'av_hubert_pretraining', 'data': '/checkpoint/bshi/data/lrs3//video/wav/all_tsv/', 'labels': ['wrd'], 'label_dir': '/checkpoint/bshi/data/lrs3//exp/ls-hubert/tune-modality/all_bpe/unigram1000/', 'label_rate': -1, 'sample_rate': 16000, 'normalize': True, 'enable_padding': False, 'max_sample_size': 500, 'min_sample_size': None, 'max_trim_sample_size': '${task.max_sample_size}', 'single_target': True, 'random_crop': False, 'pad_audio': True, 'pdb': False, 'stack_order_audio': 4, 'skip_verify': False, 'image_aug': True, 'image_crop_size': 88, 'image_mean': 0.421, 'image_std': 0.165, 'modalities': ['audio', 'video'], 'is_s2s': True, 'tokenizer_bpe_name': 'sentencepiece', 'tokenizer_bpe_model': '/checkpoint/bshi/data/lrs3//lang/spm/spm_unigram1000.model', 'noise_wav': '/checkpoint/bshi/data/lrs3//audio/noise/tsv/musan-lgall/', 'noise_prob': 0.25, 'noise_snr': '0', 'noise_num': 1, 'fine_tuning': True}
+[2026-06-16 14:52:50,956][hybrid.speech_recognize][INFO] - {'_name': None, 'task': None, 'generation': {'_name': None, 'beam': 50, 'nbest': 1, 'max_len_a': 1.0, 'max_len_b': 0, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False}, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 100, 'log_format': None, 'log_file': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': False, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 128, 'fp16_scale_window': None, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': None, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': '/workspace/code/av_hubert/avhubert', 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': '/workspace/code/visg_avhubert/large_noise_pt_noise_ft_433h.pt', 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': '/workspace/code/av_hubert/avhubert/scripts/results/large_noise_pt_noise_ft_433h/speech_snr-10'}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': 'checkpoint_last.pt', 'finetune_from_model': None, 'reset_dataloader': False, 'reset_lr_scheduler': False, 'reset_meters': False, 'reset_optimizer': False, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': False, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'loss', 'maximize_best_checkpoint_metric': False, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_algorithm': 'LocalSGD', 'localsgd_frequency': 3, 'nprocs_per_node': 2, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': False, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False}, 'dataset': {'_name': None, 'num_workers': 0, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': 1000, 'batch_size': None, 'required_batch_size_multiple': 8, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': 1000, 'batch_size_valid': None, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0}, 'override': {'_name': None, 'noise_wav': '/DB/lrs3/noise/speech', 'noise_prob': 1.0, 'noise_snr': -10.0, 'modalities': ['audio', 'video'], 'data': '/DB/lrs3/433h_data', 'label_dir': '/DB/lrs3/433h_data'}, 'is_ax': False}
+[2026-06-16 14:52:50,959][avhubert.hubert_pretraining][INFO] - Using tokenizer
+[2026-06-16 14:52:50,962][avhubert.hubert_dataset][INFO] - max_keep=500, min_keep=None, loaded 1321, skipped 0 short and 0 long and 0 unaligned, longest-loaded=155, shortest-loaded=14
+[2026-06-16 14:52:50,963][avhubert.hubert_dataset][INFO] - /DB/lrs3/433h_data/test.wrd is sequence label. skipped
+[2026-06-16 14:52:50,963][avhubert.hubert_dataset][INFO] - image transform: Compose(
+    Normalize(mean=0.0, std=255.0)
+    <avhubert.utils.CenterCrop object at 0x7fbda671e340>
+    Normalize(mean=0.421, std=0.165)
+)
+[2026-06-16 14:52:50,963][avhubert.hubert_dataset][INFO] - pad_audio=True, random_crop=False, normalize=True, max_sample_size=500, seqs2seq data=True,
+[2026-06-16 14:52:50,963][avhubert.hubert_dataset][INFO] - Noise wav: /DB/lrs3/noise/speech/test.tsv->116 wav, Prob: 1.0, SNR: -10.0, Number of mixture: 1
+[2026-06-16 14:52:53,599][hybrid.speech_recognize][INFO] - 
+REF:you're hearing one presentation after another often representing a group of people a tribe about how
+HYP:you're hearing one presentation after another often representing a group of people a tribe about how
+
+[2026-06-16 14:52:53,601][hybrid.speech_recognize][INFO] - 
+REF:last week alone i got 238 pieces of nasty email and more
+HYP:last week alone i got 238 pieces of nasty email and more
+
+[2026-06-16 14:52:53,604][hybrid.speech_recognize][INFO] - 
+REF:i'm here to tell you the story of crazy love a psychological trap disguised as love one
+HYP:i'm here to tell you the story of crazy love a psychological trap disguised this love one
+
+[2026-06-16 14:52:53,606][hybrid.speech_recognize][INFO] - 
+REF:it is my belief that to create these rare game changers requires you to pull off at least
+HYP:it is my belief that you create these rare game changes requires you to pull off at least
+
+[2026-06-16 14:52:53,609][hybrid.speech_recognize][INFO] - 
+REF:it turned out that we were doing a lot of low level drug cases on the streets just around the corner from our office in trenton
+HYP:it turned out that we were doing a lot of low level drug cases on the streets just around the corner from our office and trucked it
+
+[2026-06-16 14:52:53,612][hybrid.speech_recognize][INFO] - 
+REF:about a year after 9 11 researchers examined a group of women who were pregnant when they were exposed to the world
+HYP:about a year after 9 11 researchers examined a group of women who were pregnant when they were exposed to the world
+
+[2026-06-16 14:52:54,510][hybrid.speech_recognize][INFO] - 
+REF:and when i look at the criminal justice system in the united states today i feel the exact same way that i did about the state of
+HYP:and when i look at the criminal justice system in the united states today i feel the exact same way that i did about the state of
+
+[2026-06-16 14:52:54,513][hybrid.speech_recognize][INFO] - 
+REF:and after that initial prototype we set out to make free and open source software so that others do not have
+HYP:and after that initial prototype we set out to make free and open source software so that others do not have
+
+[2026-06-16 14:52:54,515][hybrid.speech_recognize][INFO] - 
+REF:and so many of my early memories involved intricate daydreams where i would walk across borders
+HYP:and so many of my early memories involve inter kid's day dreams where i would walk across borders
+
+[2026-06-16 14:52:54,517][hybrid.speech_recognize][INFO] - 
+REF:and that's really what i find so intriguing about the reactions that we've had to the
+HYP:and that's really why i find so intriguing about the reactions that we've had to the
+
+[2026-06-16 14:52:54,520][hybrid.speech_recognize][INFO] - 
+REF:so i decided to focus on using data and analytics to help make the most critical decision
+HYP:so i decided to focus on using data and analytics to help make the most critical decision
+
+[2026-06-16 14:52:54,523][hybrid.speech_recognize][INFO] - 
+REF:my mother was on the line to tell me that doctors had found a lump in his stomach terminal cancer
+HYP:my mother was on the line to tell me that doctors had found a lump in his stomach terminal cancer
+
+[2026-06-16 14:52:55,362][hybrid.speech_recognize][INFO] - 
+REF:and all of this matters greatly because public safety to me is the most important function of
+HYP:and all of this matters greatly because public safety to me is the most important function of
+
+[2026-06-16 14:52:55,366][hybrid.speech_recognize][INFO] - 
+REF:you destroy all the bone marrow in the cancer patient with massive doses of chemotherapy
+HYP:you destroy all the bone marrow in the cancer patient with massive doses of chemotherapy
+
+[2026-06-16 14:52:55,368][hybrid.speech_recognize][INFO] - 
+REF:but in the process they also train our brains to tune out when somebody else's issue
+HYP:but in the process they also train our brains to tune out when somebody else's issue
+
+[2026-06-16 14:52:55,371][hybrid.speech_recognize][INFO] - 
+REF:so when i started my job at the arnold foundation i came back to looking at a lot of these questions and i came back
+HYP:so when i started my job at the ornald foundation i came back to looking at a lot of these questions and i came back to
+
+[2026-06-16 14:52:55,373][hybrid.speech_recognize][INFO] - 
+REF:race is a social category that has staggering biological consequences
+HYP:race is a social category that has staggering biological consequences
+
+[2026-06-16 14:52:55,376][hybrid.speech_recognize][INFO] - 
+REF:i looked at my friend who drilled seven dry wells writing off more than a billion dollars for the
+HYP:i looked at my friend who drilled seven dry wells writing off more than a billion dollars for the
+
+[2026-06-16 14:52:56,052][hybrid.speech_recognize][INFO] - 
+REF:so you want to go to that board meeting but you only want to pay attention to the bits that interest
+HYP:so you want to go to that board meeting but you only want to pay attention to the pinnest the interest
+
+[2026-06-16 14:52:56,054][hybrid.speech_recognize][INFO] - 
+REF:they also monitored the internet and social media to monitor the progress of
+HYP:they also monitor the internet and social media to monitor the progress of
+
+[2026-06-16 14:52:56,055][hybrid.speech_recognize][INFO] - 
+REF:if you want this experience to live on as something historic then at the reception
+HYP:if you want this experience to live on as something historic then at the perception
+
+[2026-06-16 14:52:56,057][hybrid.speech_recognize][INFO] - 
+REF:what is the exact relationship between levels of greenhouse gases and planetary
+HYP:what is the exact relationship between levels of greenhouse gases and planetary
+
+[2026-06-16 14:52:56,058][hybrid.speech_recognize][INFO] - 
+REF:i'd like to make the suggestion that we don't need to aim for that to make substantial progress
+HYP:i'd like to make the suggestion and we don't need to aim for that to make substantial progress
+
+[2026-06-16 14:52:56,060][hybrid.speech_recognize][INFO] - 
+REF:that is the real world and unless we find a way to globalize democracy or
+HYP:that is the real world and unless we find a way to globalize democracy or
+
+[2026-06-16 14:52:56,795][hybrid.speech_recognize][INFO] - 
+REF:i started to write about sharing the fact that i'm a survivor of all forms of sexual abuse including three
+HYP:i started to write about sharing the fact that i'm a survivor of all forms of sexual abuse including three
+
+[2026-06-16 14:52:56,797][hybrid.speech_recognize][INFO] - 
+REF:effectively the taliban create a complete blackout of any other source of information
+HYP:effectively the dalaban create a complete blackout of any other source of information
+
+[2026-06-16 14:52:56,800][hybrid.speech_recognize][INFO] - 
+REF:but one of the things i've learned is that apparently it matters if a new product or service is
+HYP:but one of the things i've learned is that apparently it matters if a new product or service is
+
+[2026-06-16 14:52:56,802][hybrid.speech_recognize][INFO] - 
+REF:we used to have a manufacturing economy which was about building goods and products and now we have a service
+HYP:we used to have a manufacturing economy which was about building goods and products and now we have a service
+
+[2026-06-16 14:52:56,809][hybrid.speech_recognize][INFO] - 
+REF:i started to walk in the community and it didn't take a rocket scientist to realize that they weren't
+HYP:i started to walk in the community and i didn't take a right at scientists to realize that they weren't
+
+[2026-06-16 14:52:56,811][hybrid.speech_recognize][INFO] - 
+REF:and we connected over really small things like the fact that i love country music which is really
+HYP:and we connected over really small things like the fact that i love country music which is really
+
+[2026-06-16 14:52:57,780][hybrid.speech_recognize][INFO] - 
+REF:we now have a moral challenge that is in the tradition of others that we have
+HYP:we now have a moral challenge that is in the tradition of others that we have
+
+[2026-06-16 14:52:57,782][hybrid.speech_recognize][INFO] - 
+REF:so to summarize if we could offer a top quality education to everyone around the world for free
+HYP:so to summarize if we could offer a top quality education to everyone around the world for free
+
+[2026-06-16 14:52:57,783][hybrid.speech_recognize][INFO] - 
+REF:none of these studies found that people spend more on drinking or smoking or that people
+HYP:none of these studies found that people spend more on drinking or smoking or that people
+
+[2026-06-16 14:52:57,785][hybrid.speech_recognize][INFO] - 
+REF:some of them were really afraid of contagion and they wouldn't even walk in front of our
+HYP:some of them were really afraid of contaging and they wouldn't even walk in front of our
+
+[2026-06-16 14:52:57,787][hybrid.speech_recognize][INFO] - 
+REF:but before that cooperation could be realized kennedy was assassinated and that part of the
+HYP:but before that cooperation could be realized kennedy was assassinated and that part of the
+
+[2026-06-16 14:52:57,788][hybrid.speech_recognize][INFO] - 
+REF:china is constrained in terms of how much more land it actually has available for agriculture and it has massive
+HYP:china is constrained in terms of how much more land it actually has available for agriculture and it has massive
+
+[2026-06-16 14:52:59,721][hybrid.speech_recognize][INFO] - 
+REF:a couple of years ago a group of us in canada decided that we were hitting the limits of what we could accomplish
+HYP:a couple of years ago a group of us in canada decided that we were hitting the limits of what we had accomplished
+
+[2026-06-16 14:52:59,723][hybrid.speech_recognize][INFO] - 
+REF:and he was talking about the importance of coaching boys into men and changing the culture of the locker room and giving
+HYP:he was talking about the importance of coaching boys and to men and changing the culture of the locker room and giving
+
+[2026-06-16 14:52:59,725][hybrid.speech_recognize][INFO] - 
+REF:if you are asked to estimate the walking speed of a man in a video for example your answer
+HYP:if you are asked to estimate the walking speed of a man in a video for example your answer
+
+[2026-06-16 14:52:59,726][hybrid.speech_recognize][INFO] - 
+REF:we are talking about the venues in which those public spaces where we come together
+HYP:we are talking about the venues in which those public spaces where we come together
+
+[2026-06-16 14:52:59,728][hybrid.speech_recognize][INFO] - 
+REF:so we need the solutions and these people playing the game they are trying out
+HYP:so we need the solutions and these people play the game they are trying out
+
+[2026-06-16 14:52:59,729][hybrid.speech_recognize][INFO] - 
+REF:and when i talk to judges around the united states which i do all the time now they all say the same
+HYP:and when i talk to judges around the united states which i do all the time now they all see the same
+
+[2026-06-16 14:53:00,568][hybrid.speech_recognize][INFO] - 
+REF:but when you start to look at the data which by the way the judges don't have when we start to look at the data
+HYP:but when you start to look at the data which by the way the judges don't have when we start to look at the data
+
+[2026-06-16 14:53:00,574][hybrid.speech_recognize][INFO] - 
+REF:this meant that the movements demanding change knew what they were against crushing poverty widening
+HYP:this meant that the movements demanding change knew what they were against crushing poverty widening
+
+[2026-06-16 14:53:00,576][hybrid.speech_recognize][INFO] - 
+REF:when in the history of humanity has it ever been possible for one person to rob
+HYP:when in the history of humanity has it ever been possible for one person to rob
+
+[2026-06-16 14:53:00,582][hybrid.speech_recognize][INFO] - 
+REF:i'm also on this mission because the way doctors practice medicine continues to
+HYP:i'm also on this mission because the way doctors practice medicine continues to
+
+[2026-06-16 14:53:00,587][hybrid.speech_recognize][INFO] - 
+REF:and one activist actually found a contract from a western company for the sale of surveillance
+HYP:and one activist actually found a contract from a western company for the sale of surveillance
+
+[2026-06-16 14:53:00,595][hybrid.speech_recognize][INFO] - 
+REF:you know it's like once again there's this whole problem of design being often misunderstood for art
+HYP:it's like once again there's this whole problem of design being often misunderstood for art
+
+[2026-06-16 14:53:01,456][hybrid.speech_recognize][INFO] - 
+REF:and he said well i just care so deeply about my customers that i would never sell them one of our crappy products
+HYP:and he said well i just care so deeply about my customers that i would never sell them one of our crappy products
+
+[2026-06-16 14:53:01,459][hybrid.speech_recognize][INFO] - 
+REF:on the other hand statistics that's a subject that you could and should use
+HYP:on the other hand statistics that's a subject that you could and should use
+
+[2026-06-16 14:53:01,461][hybrid.speech_recognize][INFO] - 
+REF:in other words a coroner could find these things because this is a fatal recipe
+HYP:in other words a corner could find these things because this is a fatal recipe
+
+[2026-06-16 14:53:01,466][hybrid.speech_recognize][INFO] - 
+REF:and so one of the major challenges of our project really is to find photographs that were taken before something
+HYP:and so one of the major challenges of our project really is to find photographs that were taken before something
+
+[2026-06-16 14:53:01,469][hybrid.speech_recognize][INFO] - 
+REF:we go far beyond reasonable constructive criticism to dissecting any given woman's feminism
+HYP:we go far beyond reasonable constructive criticism to dissecting any given woman's feminism
+
+[2026-06-16 14:53:01,472][hybrid.speech_recognize][INFO] - 
+REF:and so i think that nature is not that which is untouched by humanity man or woman
+HYP:and so i think that nature is not that which is untouched by humanity man or woman
+
+[2026-06-16 14:53:02,328][hybrid.speech_recognize][INFO] - 
+REF:he wanted to sit where he could scan the room where he could plan escape routes where he could get his hands
+HYP:he wanted the set where he could scan the room where he could plan escape routes where he could get his hands
+
+[2026-06-16 14:53:02,332][hybrid.speech_recognize][INFO] - 
+REF:the world's companies governments and non profits have delivery armies that are fully capable of covering this
+HYP:the world's companies governments and nonprofits have delivery armies that are fully capable of covering this
+
+[2026-06-16 14:53:02,335][hybrid.speech_recognize][INFO] - 
+REF:we can build healthier relationships around race if we learn to calculate locate
+HYP:we can build healthier relationships around race if we learn to calculate locate
+
+[2026-06-16 14:53:02,338][hybrid.speech_recognize][INFO] - 
+REF:both of them bring the imagination to life in ways that remind us that all of our bonds in the end
+HYP:both of them bring the imagination to life in ways that remind us that all of our bonds in the end
+
+[2026-06-16 14:53:02,342][hybrid.speech_recognize][INFO] - 
+REF:i became a psychology researcher and i've devoted my work to understanding the human capacity to care for others
+HYP:i became a psychology researcher and i've devoted my work to understanding the human capacity to care for others
+
+[2026-06-16 14:53:02,346][hybrid.speech_recognize][INFO] - 
+REF:we have ideas for how to make things better and i want to share three of them that we've picked up in our own work
+HYP:we have ideas for how to make things better and i want to share three of them that we've picked up in our own world
+
+[2026-06-16 14:53:03,160][hybrid.speech_recognize][INFO] - 
+REF:so we locked ourselves in a room for two days and we tried to figure out what bound us together
+HYP:then we locked ourselves in the room we try to figure out what round us together
+
+[2026-06-16 14:53:03,164][hybrid.speech_recognize][INFO] - 
+REF:show abuse the light of day by talking about it with your children your coworkers your friends and
+HYP:show abuse the light of day by talking about it with your children your coworkers your friends and
+
+[2026-06-16 14:53:03,167][hybrid.speech_recognize][INFO] - 
+REF:we can create a decentralized database that has the same efficiency of a monopoly
+HYP:we can create a decentralized database that has the same efficiency of a monopoly
+
+[2026-06-16 14:53:03,170][hybrid.speech_recognize][INFO] - 
+REF:the authors looked at papers written over a 10 year period and hundreds had to be thrown out
+HYP:the authors looked at papers written over a 10 year period and hundreds had to be thrown out
+
+[2026-06-16 14:53:03,173][hybrid.speech_recognize][INFO] - 
+REF:so it's really important that you know that right now we have over
+HYP:so it's really important that you know that right now we have over
+
+[2026-06-16 14:53:03,178][hybrid.speech_recognize][INFO] - 
+REF:i imagine that my kids are going to live in a time when the most valuable commodities are fresh water
+HYP:i imagine that my kids are going to live in a time when the most valuable commodities are fresh water
+
+[2026-06-16 14:53:04,101][hybrid.speech_recognize][INFO] - 
+REF:which is why that ivy league degree and the wall street job and his bright shiny future
+HYP:which is why that ivy league degree and the wall street job and his bright shining future
+
+[2026-06-16 14:53:04,104][hybrid.speech_recognize][INFO] - 
+REF:if any child is found violating these rules he is severely reprimanded
+HYP:if any child is found violating these rules can be severely reprimanded
+
+[2026-06-16 14:53:04,117][hybrid.speech_recognize][INFO] - 
+REF:yet when she had to find seven hours because there is water all over her basement she found
+HYP:yet when she had to find seven hours because there is water all over her basement she found
+
+[2026-06-16 14:53:04,120][hybrid.speech_recognize][INFO] - 
+REF:they were unbelievably expensive to administer they were time consuming they were limited to the local
+HYP:they were unbelievably expensive to administer they were time consuming they were limited to the local
+
+[2026-06-16 14:53:04,123][hybrid.speech_recognize][INFO] - 
+REF:they know you can fail by starting a business that goes bankrupt or by failing to start a business at all
+HYP:they know you can fail by starting a business that goes bankrupts or by failing to start a business at all
+
+[2026-06-16 14:53:04,134][hybrid.speech_recognize][INFO] - 
+REF:like we evolved on this planet in the context of all the other animals with which we share
+HYP:like we evolved on this planet in the context of all the other animals with which we share
+
+[2026-06-16 14:53:04,136][hybrid.speech_recognize][INFO] - 
+REF:so i want to talk to you today about what i think is a much more complete recipe for deep
+HYP:so i want to talk to you today about what i think is a much more complete recipe for deep
+
+[2026-06-16 14:53:04,981][hybrid.speech_recognize][INFO] - 
+REF:it's shocking to realize that only 28 percent of american
+HYP:it's shocking to realize that only 28 of american
+
+[2026-06-16 14:53:04,984][hybrid.speech_recognize][INFO] - 
+REF:and the soldier on the front tank said we have unconditional orders to destroy this
+HYP:and the soldier on the front tank said we have unconditional orders to destroy this
+
+[2026-06-16 14:53:04,987][hybrid.speech_recognize][INFO] - 
+REF:children are especially sensitive to this repeated stress activation
+HYP:there's a minor research and recentive to this repucised essential
+
+[2026-06-16 14:53:04,996][hybrid.speech_recognize][INFO] - 
+REF:when you really look at it how is it that young people spend most of their time using new technologies
+HYP:when you really look at it how is it that young people spend most of their time using new technologies
+
+[2026-06-16 14:53:04,998][hybrid.speech_recognize][INFO] - 
+REF:and when you think about it it makes a lot of sense because forming a question is a really complex
+HYP:and when you think about it it makes a lot of sense because forming a question is a really complex
+
+[2026-06-16 14:53:05,001][hybrid.speech_recognize][INFO] - 
+REF:and so knowing that we went to the advertising council and we asked them to help us
+HYP:and so knowing that we went to the advertising council and we asked them to help us
+
+[2026-06-16 14:53:05,004][hybrid.speech_recognize][INFO] - 
+REF:so when you're born you can make feelings like calmness and
+HYP:so when you're born you can make feelings like calmness and
+
+[2026-06-16 14:53:06,084][hybrid.speech_recognize][INFO] - 
+REF:well very often we think about political change in defined compartments these days
+HYP:well very often we think about political change in defined compartments these days
+
+[2026-06-16 14:53:06,098][hybrid.speech_recognize][INFO] - 
+REF:thousands of women started reaching out to me to share their own stories of pain and agony and shame
+HYP:thousands of women started reaching out to me to share their own stories of pain taggony and shame
+
+[2026-06-16 14:53:06,101][hybrid.speech_recognize][INFO] - 
+REF:and others resented this comparison between gay rights and civil rights and
+HYP:and others resented this comparison between gay rights and civil rights and
+
+[2026-06-16 14:53:06,105][hybrid.speech_recognize][INFO] - 
+REF:imagine if we had across the country right now in local places but
+HYP:imagine if we had across the country right now a local place that's been
+
+[2026-06-16 14:53:06,115][hybrid.speech_recognize][INFO] - 
+REF:we are now very comfortable imagining unimaginable technological achievement
+HYP:we are now very comfortable imagining unimaginable technological achievement
+
+[2026-06-16 14:53:06,117][hybrid.speech_recognize][INFO] - 
+REF:it's using past experience based on similar situations to try to make meaning
+HYP:it's using past experience based on similar situations to try to make meaning
+
+[2026-06-16 14:53:06,122][hybrid.speech_recognize][INFO] - 
+REF:there's going to be a new system based on donated package tracking technology from the logistics company that i work for
+HYP:there's going to be a new system based on donated back at tracking technology from the logistics company that i worked for
+
+[2026-06-16 14:53:07,175][hybrid.speech_recognize][INFO] - 
+REF:and it's an issue of the quality and the integrity of science and medicine
+HYP:and it's an issue of the quality and the integrity of science and medicine
+
+[2026-06-16 14:53:07,177][hybrid.speech_recognize][INFO] - 
+REF:i'm not strong enough to lift my carry on bag from the ground to the carousel
+HYP:i'm not strong enough to lift my carry on back from the grounds to the carocell
+
+[2026-06-16 14:53:07,180][hybrid.speech_recognize][INFO] - 
+REF:some boys broke me when i was so young i did not know what boys can do to break a girl
+HYP:some boys broke me when i was so young i did not know what boys could do to break a girl
+
+[2026-06-16 14:53:07,181][hybrid.speech_recognize][INFO] - 
+REF:but the second of the transformations the climate transformations we have to decide to do
+HYP:but the second of the transformations the climate transformations we have to decide to do
+
+[2026-06-16 14:53:07,183][hybrid.speech_recognize][INFO] - 
+REF:and it's hard and it takes courage but that's why we're alive right
+HYP:that it's hard and it takes courage but that's why we're alive right
+
+[2026-06-16 14:53:07,185][hybrid.speech_recognize][INFO] - 
+REF:roughly 300 savings and loans involved roughly 600 senior officials
+HYP:roughly 300 savings and loans involved roughly 600 senior officials
+
+[2026-06-16 14:53:07,187][hybrid.speech_recognize][INFO] - 
+REF:so people hear about this study and they're like great if i want to get better at my job i just need to upgrade my browser
+HYP:so people hear about this study and they're like great if i want to get better at my job i just need to upgrade my browser
+
+[2026-06-16 14:53:08,296][hybrid.speech_recognize][INFO] - 
+REF:social change doesn't happen in the arab region through dramatic confrontation
+HYP:social change just happened in the arab region through dramatic confrontation
+
+[2026-06-16 14:53:08,306][hybrid.speech_recognize][INFO] - 
+REF:i've struggled to say those words because i didn't want to be defined by them
+HYP:i've struggled to say those words because i didn't want to be defined by them
+
+[2026-06-16 14:53:08,315][hybrid.speech_recognize][INFO] - 
+REF:we have the tools but we lack the collective will and momentum
+HYP:we have the tools but we lack the collective will and momentum
+
+[2026-06-16 14:53:08,317][hybrid.speech_recognize][INFO] - 
+REF:a huge opportunity unleashing of new potential for innovation for development
+HYP:a huge opportunity unleashing of new potential for innovation for development
+
+[2026-06-16 14:53:08,319][hybrid.speech_recognize][INFO] - 
+REF:and to do so we've had to believe in impossible things
+HYP:and to do so we've had to believe in impossible things
+
+[2026-06-16 14:53:08,321][hybrid.speech_recognize][INFO] - 
+REF:progressive movements are growing and resisting with tremendous courage
+HYP:progressive movements are growing and resisting with tremendous courage
+
+[2026-06-16 14:53:08,323][hybrid.speech_recognize][INFO] - 
+REF:what it looks like what it feels like and most of all what its core values are
+HYP:what it looks like what it feels like and most of all what its core values are
+
+[2026-06-16 14:53:08,324][hybrid.speech_recognize][INFO] - 
+REF:and so it was that day that we decided we needed to build a crisis text hotline
+HYP:and so it was that day that we decided we needed to build a crisis text hotline
+
+[2026-06-16 14:53:09,417][hybrid.speech_recognize][INFO] - 
+REF:don't we already know the consequences of a changing climate on our settled civilization
+HYP:don't we already know the consequences of a changing climate in our settled civilization
+
+[2026-06-16 14:53:09,419][hybrid.speech_recognize][INFO] - 
+REF:they have been sold by their families often to wealthy arab tourists
+HYP:they have been sold by their families often to wealthy arab tourists
+
+[2026-06-16 14:53:09,421][hybrid.speech_recognize][INFO] - 
+REF:and all of that sounds great until you figure out where it's really going
+HYP:and all of that sounds great until you figure out where it's really going
+
+[2026-06-16 14:53:09,423][hybrid.speech_recognize][INFO] - 
+REF:but if they don't stay in paris the international pressure will be overwhelming
+HYP:but if they don't stay in paris the international pressure will be overwhelming
+
+[2026-06-16 14:53:09,425][hybrid.speech_recognize][INFO] - 
+REF:but when i was little i remember he would kill flies in our house with my bb gun
+HYP:but when i was little i would remember he would kill flies in our house with my beebie gun
+
+[2026-06-16 14:53:09,427][hybrid.speech_recognize][INFO] - 
+REF:we're going to start putting an entire layer of digital information on the real world
+HYP:we're going to start putting an entire layer of digital information on the real world
+
+[2026-06-16 14:53:09,430][hybrid.speech_recognize][INFO] - 
+REF:well once again women get the angiogram and nobody can tell that they have a problem
+HYP:well once again women get kanji gram and nobody can tell that they have a problem
+
+[2026-06-16 14:53:09,432][hybrid.speech_recognize][INFO] - 
+REF:this is just one face of a booming sex trade across the arab region
+HYP:this is just one face of a booming sex trade across the arab region
+
+[2026-06-16 14:53:10,450][hybrid.speech_recognize][INFO] - 
+REF:you have to have a high tech experience of pregnancy otherwise something might go wrong
+HYP:you have to have a high tech experience of pregnancy otherwise something might go wrong
+
+[2026-06-16 14:53:10,453][hybrid.speech_recognize][INFO] - 
+REF:often what happens is you're planning so hard for like how do i get through the hardest part
+HYP:often what happens is you're planning so hard for like how do i get through the hardest part
+
+[2026-06-16 14:53:10,455][hybrid.speech_recognize][INFO] - 
+REF:and i went back home and i said daddy i don't know who i am
+HYP:and i went back home and i said danny i don't know who i am
+
+[2026-06-16 14:53:10,522][hybrid.speech_recognize][INFO] - 
+REF:one you need to know where you are and exactly what time it is
+HYP:what you need to know where you are and exactly what time it is
+
+[2026-06-16 14:53:10,524][hybrid.speech_recognize][INFO] - 
+REF:the second is you can put lots and lots of tests in a very small place
+HYP:the second is you can put lots and lots of tests in a very small place
+
+[2026-06-16 14:53:10,526][hybrid.speech_recognize][INFO] - 
+REF:so the very first thing we wanted to do in this building was look at the air system
+HYP:so the very first thing we wanted to do in this building was look at the air system
+
+[2026-06-16 14:53:10,529][hybrid.speech_recognize][INFO] - 
+REF:i think we need something like a manhattan project on the topic of artificial intelligence
+HYP:i think we need something like a manhattan project on the topic of artificial intelligence
+
+[2026-06-16 14:53:10,532][hybrid.speech_recognize][INFO] - 
+REF:it brings people together and it supports creativity and social cohesion
+HYP:it brings people together and it supports creativity and social cohesion
+
+[2026-06-16 14:53:11,551][hybrid.speech_recognize][INFO] - 
+REF:i hope that we can all be a little bit brave when we most need such bravery
+HYP:i hope that we can all be a little bit brave when we both need such bravery
+
+[2026-06-16 14:53:11,553][hybrid.speech_recognize][INFO] - 
+REF:it was faulty and most of the time i had to restart it over and over before it worked
+HYP:it was faulty and most of the time i had to restart it over and over before it worked
+
+[2026-06-16 14:53:11,556][hybrid.speech_recognize][INFO] - 
+REF:african americans supported it at a higher level than had ever been recorded
+HYP:african americans supported it at a higher level than had ever been recorded
+
+[2026-06-16 14:53:11,558][hybrid.speech_recognize][INFO] - 
+REF:there's love and there's friendship and there's protection
+HYP:there's love and there's friendship and there's protection
+
+[2026-06-16 14:53:11,560][hybrid.speech_recognize][INFO] - 
+REF:so i'm not saying that staying in the workforce is the right thing for everyone
+HYP:so i'm not saying that staying in the workforce is the right thing for everyone
+
+[2026-06-16 14:53:11,568][hybrid.speech_recognize][INFO] - 
+REF:texting has developed one from this slash
+HYP:texting has developed one from this slash
+
+[2026-06-16 14:53:11,571][hybrid.speech_recognize][INFO] - 
+REF:this economy won't work and thomas jefferson saying the people won't trust that
+HYP:we're saying it won't work and thomas jefferson is saying the people won't trust that
+
+[2026-06-16 14:53:11,573][hybrid.speech_recognize][INFO] - 
+REF:you don't have to bring any quarters because the washer and dryer are free
+HYP:you don't have to bring any orders because the washington drawer are free
+
+[2026-06-16 14:53:12,673][hybrid.speech_recognize][INFO] - 
+REF:wealth is ripped away from people who shouldn't be called unproductive
+HYP:wealth is ripped away from people who shouldn't be called unproductive
+
+[2026-06-16 14:53:12,676][hybrid.speech_recognize][INFO] - 
+REF:we had drawn a blank and it wasn't just iraq and afghanistan
+HYP:we had drawn a blank and it wasn't just iraq at afghanistan
+
+[2026-06-16 14:53:12,678][hybrid.speech_recognize][INFO] - 
+REF:and imagine what might happen because every region has something to offer
+HYP:and imagine what might happen because every region has something to offer
+
+[2026-06-16 14:53:12,679][hybrid.speech_recognize][INFO] - 
+REF:getting a college education is a 20 year investment
+HYP:getting a college education is a 20 year investment
+
+[2026-06-16 14:53:12,690][hybrid.speech_recognize][INFO] - 
+REF:science fiction is one of the greatest and most effective forms of political writing
+HYP:science fiction is one of the greatest and most effective forms of political writing
+
+[2026-06-16 14:53:12,693][hybrid.speech_recognize][INFO] - 
+REF:some of them got out of the army and had tremendous psychological problems when they got home
+HYP:some of them got out of the army and had tremendous psychological problems when they got home
+
+[2026-06-16 14:53:12,695][hybrid.speech_recognize][INFO] - 
+REF:their parents are so poor they have no resources to get them back
+HYP:their parents are so poor they have no resources to get them back
+
+[2026-06-16 14:53:12,697][hybrid.speech_recognize][INFO] - 
+REF:now at that time camden new jersey was the most dangerous city in america
+HYP:at that time camden new jersey was the most dangerous city in america
+
+[2026-06-16 14:53:13,591][hybrid.speech_recognize][INFO] - 
+REF:dan replies so often you won't even notice it
+HYP:dan replies so often you won't even notice it
+
+[2026-06-16 14:53:13,595][hybrid.speech_recognize][INFO] - 
+REF:we do train them however to adjust caution according to where they are
+HYP:we do train them however to adjust caution according to where they are
+
+[2026-06-16 14:53:13,597][hybrid.speech_recognize][INFO] - 
+REF:when this happens we're not able to appreciate who they are
+HYP:when this happens we're not able to appreciate who they are
+
+[2026-06-16 14:53:13,600][hybrid.speech_recognize][INFO] - 
+REF:it's a composite view that's constantly changing and being updated
+HYP:it's a composite view that's constantly changing and being updated
+
+[2026-06-16 14:53:13,603][hybrid.speech_recognize][INFO] - 
+REF:so they won't go for a walk they won't hang out with their friends they won't eat
+HYP:so they won't go for a walk they won't hang out with their friends they won't eat
+
+[2026-06-16 14:53:13,605][hybrid.speech_recognize][INFO] - 
+REF:the same tool that united us to topple dictators
+HYP:the same tool that united us to topple dictators
+
+[2026-06-16 14:53:13,607][hybrid.speech_recognize][INFO] - 
+REF:it came from the way in which beijing has grown as a city
+HYP:it came from the way in which beijing has grown as a city
+
+[2026-06-16 14:53:13,611][hybrid.speech_recognize][INFO] - 
+REF:and they would take a yellow sticky and they would write something on it and they would put it up on a board
+HYP:and they would take a yellow city and they would write something on it and they would put it up on a board
+
+[2026-06-16 14:53:14,368][hybrid.speech_recognize][INFO] - 
+REF:so we need a system that helps all our teachers be as good as the best
+HYP:so we need a system that helps all our teachers be as good as the best
+
+[2026-06-16 14:53:14,369][hybrid.speech_recognize][INFO] - 
+REF:i learned to write like them and then i learned to write as myself
+HYP:i learned to write like them and then i learned to write as myself
+
+[2026-06-16 14:53:14,371][hybrid.speech_recognize][INFO] - 
+REF:because each year the winner has come from a different tribal group
+HYP:because each year the winner has come from a different tribal group
+
+[2026-06-16 14:53:14,372][hybrid.speech_recognize][INFO] - 
+REF:china is the world's greatest anti poverty program over the last three decades
+HYP:china is the world's greatest anti poverty program over the last three decades
+
+[2026-06-16 14:53:14,374][hybrid.speech_recognize][INFO] - 
+REF:they are gorgeous and headstrong brilliant girls who are a whole lot of brave
+HYP:they are gorgeously head strong brilliant girls who are a whole lot of brave
+
+[2026-06-16 14:53:14,375][hybrid.speech_recognize][INFO] - 
+REF:his name is lonnie hodge and he's a veteran of vietnam
+HYP:his name is lanny hodge he's a veteran of iram
+
+[2026-06-16 14:53:14,376][hybrid.speech_recognize][INFO] - 
+REF:for africans homegrown science fiction can be a will to power
+HYP:for africans homegrown science fiction can be a will to power
+
+[2026-06-16 14:53:14,377][hybrid.speech_recognize][INFO] - 
+REF:how can we get so much information out of so little motion
+HYP:how could we get so much information out of so little motion
+
+[2026-06-16 14:53:15,386][hybrid.speech_recognize][INFO] - 
+REF:and that's even if you're working way more than full time hours
+HYP:and that's even if you're working way more than full time hours
+
+[2026-06-16 14:53:15,396][hybrid.speech_recognize][INFO] - 
+REF:we go out there and we hop in our cars and we drive from place to place
+HYP:we go out there and we cop in our cars and we drive from place to place
+
+[2026-06-16 14:53:15,399][hybrid.speech_recognize][INFO] - 
+REF:i think what that means is that people just couldn't see what was in front of them
+HYP:i think what that means is that people just couldn't see what was in front of them
+
+[2026-06-16 14:53:15,401][hybrid.speech_recognize][INFO] - 
+REF:and so we need to do better at copying their natural environment to get them to thrive
+HYP:and so we need to do better at copying their natural environment to get them to thrive
+
+[2026-06-16 14:53:15,405][hybrid.speech_recognize][INFO] - 
+REF:we took camden off the top of the list as the most dangerous city in america
+HYP:we took cammin off the top of the list as the most dangerous city in america
+
+[2026-06-16 14:53:15,407][hybrid.speech_recognize][INFO] - 
+REF:so this is not the slogan from an inspirational poster
+HYP:so this is not the slogan from an inspirational poster
+
+[2026-06-16 14:53:15,410][hybrid.speech_recognize][INFO] - 
+REF:everybody focuses on the things that kill us and that's what i was focusing on
+HYP:everybody focuses on the things that kill us and that's what i was focusing on
+
+[2026-06-16 14:53:15,412][hybrid.speech_recognize][INFO] - 
+REF:so since then i've been the bridge and a lot of people have walked over me
+HYP:so since then i've been the bridge and a lot of people have walked over me
+
+[2026-06-16 14:53:16,183][hybrid.speech_recognize][INFO] - 
+REF:so it's more about capturing an idea than about capturing a moment really
+HYP:so it's more about capturing an idea than about capturing a moment really
+
+[2026-06-16 14:53:16,186][hybrid.speech_recognize][INFO] - 
+REF:and they wanted to look at the microbes after the transplants
+HYP:and they wanted to look at the microbes after the transplants
+
+[2026-06-16 14:53:16,188][hybrid.speech_recognize][INFO] - 
+REF:they all look the same under a microscope i mean to a first approximation
+HYP:they all need the same under a microscope i mean to a first approximation
+
+[2026-06-16 14:53:16,195][hybrid.speech_recognize][INFO] - 
+REF:it took six days to deploy a global malware campaign
+HYP:it took six days to deploy a global malwear campaign
+
+[2026-06-16 14:53:16,197][hybrid.speech_recognize][INFO] - 
+REF:we change the economics for the bad guys
+HYP:we changed the economics for the bad guys
+
+[2026-06-16 14:53:16,200][hybrid.speech_recognize][INFO] - 
+REF:and i want to make the point that as members of society we need to
+HYP:and i want to make the point that as members of society we need to
+
+[2026-06-16 14:53:16,203][hybrid.speech_recognize][INFO] - 
+REF:we see it as a disruption of real life and important work
+HYP:we see it as a disruption of real life and important work
+
+[2026-06-16 14:53:16,206][hybrid.speech_recognize][INFO] - 
+REF:pain runs through my body with the fires of my love for you
+HYP:pain rans through my body with the fires of my love for you
+
+[2026-06-16 14:53:17,173][hybrid.speech_recognize][INFO] - 
+REF:the choices don't make sense because it's the wrong question
+HYP:the choices don't make sense because it's the wrong question
+
+[2026-06-16 14:53:17,175][hybrid.speech_recognize][INFO] - 
+REF:i am fascinated by those times when people do not see eye to eye
+HYP:i am fascinated by those times when people do not see eye i
+
+[2026-06-16 14:53:17,177][hybrid.speech_recognize][INFO] - 
+REF:we had the battle between jefferson and hamilton
+HYP:we had the battle between jefferson and hamilton
+
+[2026-06-16 14:53:17,179][hybrid.speech_recognize][INFO] - 
+REF:growing up i was always intrigued by how people change
+HYP:growing up i was always intrigued by how people change
+
+[2026-06-16 14:53:17,182][hybrid.speech_recognize][INFO] - 
+REF:they're completely flat and they're basically cardboard characters
+HYP:they're completely flat and they're basically cardboard characters
+
+[2026-06-16 14:53:17,196][hybrid.speech_recognize][INFO] - 
+REF:but just imagine for a moment what this must feel like
+HYP:but just imagine for a moment what this must feel like
+
+[2026-06-16 14:53:17,199][hybrid.speech_recognize][INFO] - 
+REF:so after 25 years i began to feel as though i was running dry
+HYP:do that for 25 years are we going to feel as though i was running dry
+
+[2026-06-16 14:53:17,207][hybrid.speech_recognize][INFO] - 
+REF:and at the other end of the spectrum we're doing an equally terrible job
+HYP:and at the op other end of the spectrum we're doing an equally terrible job
+
